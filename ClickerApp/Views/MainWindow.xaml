@@ -6,15 +6,23 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:vm="clr-namespace:ViewModels"
     Title="ClickerApp"
-    d:DesignHeight="450"
-    d:DesignWidth="800"
     Icon="/Assets/avalonia-logo.ico"
-    mc:Ignorable="d">
+    WindowState="Maximized"
+    HasSystemDecorations="True"
+    MaxWidth="270" MaxHeight="480">
     <Design.DataContext>
         <vm:MainWindowViewModel />
     </Design.DataContext>
-    <TextBlock
-        HorizontalAlignment="Center"
-        VerticalAlignment="Center"
-        Text="{Binding Greeting}" />
+  <Grid ColumnDefinitions="9*,*" RowDefinitions="*,16*,*" ShowGridLines="True">
+    <DockPanel Grid.Column="1">
+      <Button Click="ExitApp"/>      
+    </DockPanel>
+    <Grid Grid.Row="1" RowDefinitions="6*,4*" ShowGridLines="True">
+      <Image/>
+      <StackPanel Grid.Row="1" x:Name="BtnPanel">
+        <Button x:Name="Play" Height=""/>
+        <Button x:Name="Options"/>
+      </StackPanel>
+    </Grid>
+  </Grid>
 </Window>
