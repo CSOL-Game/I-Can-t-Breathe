@@ -13,16 +13,18 @@
     <Design.DataContext>
         <vm:MainWindowViewModel />
     </Design.DataContext>
-  <Grid ColumnDefinitions="9*,*" RowDefinitions="*,16*,*" ShowGridLines="True">
-    <DockPanel Grid.Column="1">
-      <Button Click="ExitApp"/>      
-    </DockPanel>
-    <Grid Grid.Row="1" RowDefinitions="6*,4*" ShowGridLines="True">
-      <Image/>
-      <StackPanel Grid.Row="1" x:Name="BtnPanel">
-        <Button x:Name="Play" Height=""/>
-        <Button x:Name="Options"/>
-      </StackPanel>
+    <Grid ColumnDefinitions="9*,*" RowDefinitions="*,16*,*" ShowGridLines="True">
+      <DockPanel Grid.Column="1">
+        <Button Click="ExitApp"/>      
+      </DockPanel>
+      <Grid Grid.Row="1" RowDefinitions="6*,4*" ShowGridLines="True" Grid.ColumnSpan="2">
+        <Image Source="/Assets/avalonia-logo.ico"/>
+        <DockPanel Grid.Row="1">
+          <Grid RowDefinitions="2*,*,2*,*">
+            <Button x:Name="Play"/>
+            <Button x:Name="Options" Grid.Row="2"/>
+          </Grid>      
+        </DockPanel>
+      </Grid>
     </Grid>
-  </Grid>
 </Window>
